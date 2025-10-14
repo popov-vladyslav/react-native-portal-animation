@@ -1,20 +1,12 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-portal-animation';
+import { AnimatedPortalProvider } from 'react-native-portal-animation';
+import Navigation from './Navigator';
 
-const result = multiply(3, 7);
-
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <AnimatedPortalProvider>
+      <Navigation />
+    </AnimatedPortalProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
