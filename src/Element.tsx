@@ -75,8 +75,8 @@ const InternalElement: ForwardRefRenderFunction<
       if (type === 'target' && !sourceConfig.value) return;
 
       const handleClean = () => {
-        if (onAnimationComplete) onAnimationComplete();
         if (clean) clean();
+        if (onAnimationComplete) onAnimationComplete();
       };
 
       scheduleOnUI(() => {
