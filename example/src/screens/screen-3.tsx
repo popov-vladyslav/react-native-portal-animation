@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useLayoutEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Button, Dimensions } from 'react-native';
-import { type RootStackParamList, Screens } from '../Navigator';
+import { type RootStackParamList, Screens } from '../navigation/types';
 import { type NavigationProp, useNavigation } from '@react-navigation/native';
 import {
   AnimatedPortalElement,
@@ -16,7 +16,7 @@ export const Screen3: React.FC = () => {
 
   const animatedRef = useRef<AnimatedPortalElementRef>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     animatedRef.current?.measureLayout({
       type: 'target',
     });

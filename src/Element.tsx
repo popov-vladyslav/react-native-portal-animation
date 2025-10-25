@@ -59,9 +59,7 @@ const InternalElement: ForwardRefRenderFunction<
     const result = animationHook?.(animationProps) || {};
     if (!React.isValidElement(children)) return null;
 
-    return React.cloneElement(children, {
-      ...result,
-    });
+    return React.cloneElement(children, result);
   }, [animationHook, animationProps, children]);
 
   const handleSetPortalContent = useCallback(() => {
@@ -121,6 +119,7 @@ const InternalElement: ForwardRefRenderFunction<
   return (
     <View>
       <Animated.View
+        testID="portal-element"
         style={[styles.container, containerStyle]}
         ref={animatedRef}
         collapsable={false}

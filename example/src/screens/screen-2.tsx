@@ -1,7 +1,7 @@
 import { type NavigationProp, useNavigation } from '@react-navigation/native';
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useLayoutEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { type RootStackParamList, Screens } from '../Navigator';
+import { type RootStackParamList, Screens } from '../navigation/types';
 import { SimpleElement } from '../components';
 import {
   AnimatedPortalElement,
@@ -83,7 +83,7 @@ export const Screen2: React.FC = () => {
 
   const animatedRef = useRef<AnimatedPortalElementRef>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     animatedRef.current?.measureLayout({
       type: 'target',
     });
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     alignItems: 'flex-end',
   },
   element: {
