@@ -1,6 +1,6 @@
 {
   "name": "react-native-portal-animation",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "React Native library for creating animated portals, enabling smooth transitions and shared element animations between components or screens.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
